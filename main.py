@@ -1,40 +1,30 @@
-class BankAccount:
-    def __init__(self, account_number, account_holder, initial_balance=0):
-        self.account_number = account_number
-        self.account_holder = account_holder
-        self.balance = initial_balance
-        self.transactions = []
-
-    def __str__(self):
-        return f"Account[{self.account_number}] - Holder: {self.account_holder} - Balance: £{self.balance}"
+from bank_account import BankAccount
+import random
 
 
-    # Deposit into account
-    def deposit(self, amount: float):
-        if ammount > 0:
-            self.balance += amount
-            self.transactions.append(f"Deposited: £{amount}")
-            print(f"{amount} deposited successfully.")
-        else:
-            print("Deposit amount must be positive.")
-    
-    # Withdraw from account
-    def withdraw(self, amount: float):
-        if amount > 0:
-            if amount <= self.balance:
-                self.balance -= amount
-                self.transactions.append(f"Withdrew: £{amount}")
-                print(f"£{amount} withdrawn successfully.")
-            else:
-                print("Insufficient funds.")
-        else:
-            print("Withdrawal amount must be positive")
-
-    
-    def check_balance(self):
-        print(f"Current balance: £{self.balance}")
-        return self.balance
 
 
-    
 
+
+
+# User can create account
+def create_account():
+    account_number = input("Enter bank account number: ")
+    account_holder = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial balance: "))
+    return BankAccount(account_number, account_holder, initial_balance)
+
+
+def perform_deposit(account):
+    amount = float(input("Enter amount to deposit: "))
+    account.deposit(amount)
+
+def perform_withdrawal(account):
+    amount = float(input("Enter amount to withdraw: "))
+    account.withdraw(amount)
+
+def check_balance(account):
+    account.check_balance()
+
+def view_transactions(account):
+    account.view_transactions()
