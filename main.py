@@ -28,3 +28,34 @@ def check_balance(account):
 
 def view_transactions(account):
     account.view_transactions()
+
+
+# Main menu for choosing different actions
+def main():
+    print("Welcome to the Basic Banking System.")
+    account = create_account()
+    print("Account created successfully!\n")
+
+    while True:
+        print("\nMenu: ")
+        print("1. Deposit")
+        print("2. Withdraw")
+        print("3. Check Balance")
+        print("4. View Transactions")
+        print("5. Exit")
+
+        choice = input("Enter your choice of action: ")
+
+        if choice == "1":
+            perform_deposit(account)
+        elif choice == "2":
+            perform_withdrawal(account)
+        elif choice == "3":
+            check_balance(account)
+        elif choice == "4":
+            view_transactions(account)
+        elif choice == "5":
+            print("Exiting the system. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again!")
