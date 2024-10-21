@@ -5,4 +5,6 @@ class BankAccount:
         self.balance = initial_balance
         self.transactions = []
 
-        
+    def __str__(self):
+        return f"Account[{self.account_number}] - Holder: {self.account_holder} - Balance: £{self.balance}"
+
