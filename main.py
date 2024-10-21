@@ -3,13 +3,14 @@ import random
 
 
 
-
+bank_account_number = int(''.join(map(str, random.choices(range(10), k=8))))
 
 
 
 # User can create account
 def create_account():
-    account_number = input("Enter bank account number: ")
+    account_number = bank_account_number
+    print(f"Account Number: {account_number}")
     account_holder = input("Enter account holder's name: ")
     initial_balance = float(input("Enter initial balance: "))
     return BankAccount(account_number, account_holder, initial_balance)
@@ -59,3 +60,6 @@ def main():
             break
         else:
             print("Invalid choice. Please try again!")
+
+if __name__ == "__main__":
+    main()

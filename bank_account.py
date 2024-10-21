@@ -10,8 +10,8 @@ class BankAccount:
 
 
     # Deposit into account
-    def deposit(self, amount: float):
-        if ammount > 0:
+    def deposit(self, amount):
+        if amount > 0:
             self.balance += amount
             self.transactions.append(f"Deposited: £{amount}")
             print(f"{amount} deposited successfully.")
@@ -19,7 +19,7 @@ class BankAccount:
             print("Deposit amount must be positive.")
     
     # Withdraw from account
-    def withdraw(self, amount: float):
+    def withdraw(self, amount):
         if amount > 0:
             if amount <= self.balance:
                 self.balance -= amount
